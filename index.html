@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OKRINO — L'art de vivre, fait main</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="images/logo-web.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/logo-web.png">
+  <link rel="apple-touch-icon" href="images/noir_transparent.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ─── Variables ─── */
+    :root {
+      --cream:        #F5EFE6;
+      --cream-dark:   #EDE5D8;
+      --warm-white:   #FAF7F2;
+      --dark:         #1C1008;
+      --brown:        #5C3D2A;
+      --medium:       #8B6E5A;
+      --light:        #C4B09A;
+      --border:       #D8CCBA;
+      --copper:       #B07840;
+      --dark-bg:      #1E160E;
+    }
+
+    /* ─── Reset ─── */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--dark);
+      font-size: 14px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; max-width: 100%; }
+    a  { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ─── Top Announcement Bar ─── */
+    .announcement-bar {
+      background: var(--dark-bg);
+      color: #C8B89A;
+      text-align: center;
+      padding: 9px 20px;
+      font-size: 10.5px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+
+    /* ─── Navigation ─── */
+    .nav-wrapper {
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 1px 20px rgba(28,16,8,.04);
+    }
+
+    .nav-main {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      padding: 0 48px;
+      height: 72px;
+      gap: 24px;
+    }
+
+    .nav-links-left,
+    .nav-links-right {
+      display: flex;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .nav-links-right { justify-content: flex-end; }
+
+    .nav-link {
+      font-size: 10.5px;
+      letter-spacing: 2.2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      color: var(--dark);
+      transition: color .25s;
+      position: relative;
+      padding-bottom: 2px;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0;
+      width: 0; height: 1px;
+      background: var(--copper);
+      transition: width .3s;
+    }
+
+    .nav-link:hover { color: var(--copper); }
+    .nav-link:hover::after { width: 100%; }
+
+    .nav-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .nav-logo img {
+      height: 72px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    /* Mobile hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--dark);
+      transition: all .3s;
+    }
+
+    /* ─── Hero ─── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 580px;
+      background: var(--cream);
+      overflow: hidden;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 64px 56px 64px 80px;
+    }
+
+.hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(40px, 4.5vw, 66px);
+      font-weight: 400;
+      line-height: 1.08;
+      color: var(--dark);
+      margin-bottom: 28px;
+      letter-spacing: -.5px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .hero-desc {
+      font-size: 13px;
+      color: var(--medium);
+      line-height: 1.85;
+      max-width: 360px;
+      margin-bottom: 44px;
+      font-weight: 300;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      border: 1px solid var(--dark);
+      color: var(--dark);
+      padding: 14px 38px;
+      font-size: 9.5px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-family: 'Jost', sans-serif;
+      transition: all .35s;
+      width: fit-content;
+      cursor: pointer;
+    }
+
+    .btn-outline:hover {
+      background: var(--dark);
+      color: var(--cream);
+    }
+
+/* Hero Right — image collage */
+    .hero-right {
+      position: relative;
+      background: linear-gradient(145deg, #EAE2D4 0%, #DDD2BE 100%);
+      overflow: hidden;
+    }
+
+    .hero-strips {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .hero-strip {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-strip + .hero-strip {
+      border-left: 2px solid var(--cream);
+    }
+
+    .hero-strip img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      filter: sepia(5%) saturate(0.88) brightness(1.04);
+      transition: transform .6s ease;
+    }
+
+    .hero-strip:hover img {
+      transform: scale(1.04);
+    }
+
+    /* ─── Categories ─── */
+    .categories-section {
+      background: var(--warm-white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 56px 80px;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .category-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      padding: 24px 16px;
+      transition: transform .3s;
+      cursor: pointer;
+    }
+
+    .category-item:hover { transform: translateY(-5px); }
+
+    .category-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .category-icon svg {
+      width: 48px;
+      height: 48px;
+      stroke: var(--brown);
+      fill: none;
+      stroke-width: 1.2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .category-name {
+      font-size: 10px;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--dark);
+      text-align: center;
+    }
+
+    .category-cta {
+      font-size: 9px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--medium);
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1px;
+      transition: color .2s, border-color .2s;
+    }
+
+    .category-item:hover .category-cta {
+      color: var(--copper);
+      border-color: var(--copper);
+    }
+
+    /* ─── Products ─── */
+    .products-section {
+      padding: 80px 80px 88px;
+      background: var(--cream);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 52px;
+    }
+
+    .section-label {
+      font-size: 9.5px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--copper);
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(30px, 3.2vw, 46px);
+      font-weight: 400;
+      color: var(--dark);
+      line-height: 1.15;
+    }
+
+    .section-title em { font-style: italic; font-weight: 300; }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .product-img-wrap {
+      position: relative;
+      overflow: hidden;
+      background: var(--cream-dark);
+      aspect-ratio: 1 / 1.05;
+      margin-bottom: 18px;
+    }
+
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .6s ease;
+    }
+
+    .product-card:hover .product-img-wrap img { transform: scale(1.06); }
+
+    .product-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--dark);
+      color: var(--cream);
+      font-size: 8.5px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      padding: 4px 11px;
+      font-weight: 500;
+    }
+
+    .product-badge.badge-copper {
+      background: var(--copper);
+    }
+
+    .product-info { padding: 0 2px; }
+
+    .product-name {
+      font-size: 10.5px;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: var(--dark);
+    }
+
+    .product-material {
+      font-size: 11px;
+      color: var(--medium);
+      margin-bottom: 10px;
+      font-weight: 300;
+    }
+
+    .product-price {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 19px;
+      font-weight: 500;
+      color: var(--dark);
+    }
+
+    /* ─── Features Bar ─── */
+    .features-bar {
+      background: var(--dark-bg);
+      padding: 48px 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .feature-divider {
+      width: 1px;
+      background: rgba(255,255,255,.08);
+    }
+
+    .feature-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+    }
+
+    .feature-icon-wrap {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .feature-icon-wrap svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--copper);
+      fill: none;
+      stroke-width: 1.3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .feature-title {
+      font-size: 9.5px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: #D0C0A8;
+      font-weight: 600;
+    }
+
+    .feature-desc {
+      font-size: 11px;
+      color: #7A6A56;
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    /* ─── Footer ─── */
+    footer {
+      background: var(--cream);
+      border-top: 1px solid var(--border);
+      padding: 64px 80px 36px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 56px;
+      align-items: start;
+    }
+
+    .footer-brand {}
+
+    .footer-logo-img {
+      height: 58px;
+      width: auto;
+      margin-bottom: 20px;
+    }
+
+    .footer-brand-text {
+      font-size: 11.5px;
+      color: var(--medium);
+      line-height: 1.9;
+      margin-bottom: 24px;
+      font-weight: 300;
+    }
+
+
+
+    /* Footer Cols */
+    .footer-col-title {
+      font-size: 9.5px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 22px;
+    }
+
+    .footer-link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+
+    .footer-link-list a {
+      font-size: 12px;
+      color: var(--medium);
+      font-weight: 300;
+      transition: color .2s;
+    }
+
+    .footer-link-list a:hover { color: var(--dark); }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 10.5px;
+      color: var(--light);
+    }
+
+
+    /* ─── Alternating bg ─── */
+    .alt-bg { background: var(--warm-white); }
+
+    /* ─── Artisanat editorial cards ─── */
+    .artisanat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .artisanat-card { cursor: pointer; }
+
+    .artisanat-card-img {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: var(--cream-dark);
+      margin-bottom: 20px;
+    }
+
+    .artisanat-card-img img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform .6s;
+    }
+
+    .artisanat-card:hover .artisanat-card-img img { transform: scale(1.05); }
+
+    .artisanat-card-tag {
+      font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--copper); font-weight: 600; margin-bottom: 8px;
+    }
+
+    .artisanat-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; font-weight: 400; color: var(--dark);
+      margin-bottom: 10px; line-height: 1.25;
+    }
+
+    .artisanat-card-title em { font-style: italic; font-weight: 300; }
+
+    .artisanat-card-text {
+      font-size: 12px; color: var(--medium); line-height: 1.8; font-weight: 300;
+    }
+
+    /* ─── Sur Mesure ─── */
+    .surmasure-section {
+      background: var(--dark-bg);
+      padding: 96px 80px;
+    }
+
+    .surmasure-inner {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 80px;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .surmasure-text .section-label { color: var(--copper); }
+
+    .surmasure-text .section-title {
+      color: #F5EFE6;
+      margin-bottom: 28px;
+    }
+
+    .surmasure-desc {
+      font-size: 14px; color: #A8957E;
+      line-height: 1.9; font-weight: 300; margin-bottom: 40px;
+    }
+
+    .materials-list { display: flex; gap: 10px; flex-wrap: wrap; }
+
+    .material-tag {
+      border: 1px solid rgba(176,120,64,.45);
+      color: #C4A07A;
+      padding: 7px 18px;
+      font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase; font-weight: 500;
+    }
+
+    .surmasure-form { display: flex; flex-direction: column; gap: 20px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+    .form-label {
+      font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+      color: #A8957E; font-weight: 500;
+    }
+
+    .form-input, .form-textarea {
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      color: #F5EFE6;
+      padding: 14px 18px;
+      font-family: 'Jost', sans-serif;
+      font-size: 13px; font-weight: 300;
+      outline: none;
+      transition: border-color .25s;
+      width: 100%;
+    }
+
+    .form-input::placeholder, .form-textarea::placeholder {
+      color: rgba(200,180,155,.35);
+    }
+
+    .form-input:focus, .form-textarea:focus { border-color: var(--copper); }
+
+    .form-textarea { resize: vertical; min-height: 130px; }
+
+    .form-submit {
+      background: var(--copper); color: var(--cream);
+      border: none; padding: 15px 40px;
+      font-family: 'Jost', sans-serif;
+      font-size: 9.5px; letter-spacing: 3px; text-transform: uppercase; font-weight: 600;
+      cursor: pointer; transition: background .25s; align-self: flex-start; margin-top: 4px;
+    }
+
+    .form-submit:hover { background: var(--brown); }
+
+    /* ─── Contact ─── */
+    .contact-section {
+      background: var(--warm-white);
+      padding: 96px 80px;
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+      align-items: start;
+    }
+
+    .contact-text .section-title { margin-bottom: 24px; }
+
+    .contact-desc {
+      font-size: 14px; color: var(--medium);
+      line-height: 1.9; font-weight: 300; margin-bottom: 40px;
+    }
+
+    .contact-info-list { display: flex; flex-direction: column; gap: 20px; }
+
+    .contact-info-item { display: flex; gap: 16px; align-items: flex-start; }
+
+    .contact-info-item svg {
+      width: 16px; height: 16px;
+      stroke: var(--copper); fill: none; stroke-width: 1.5;
+      stroke-linecap: round; stroke-linejoin: round;
+      flex-shrink: 0; margin-top: 2px;
+    }
+
+    .contact-info-label {
+      font-size: 8.5px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--light); font-weight: 600; margin-bottom: 3px;
+    }
+
+    .contact-info-value {
+      font-size: 13px; color: var(--medium); font-weight: 300;
+    }
+
+    /* ─── Responsive ─── */
+    @media (max-width: 1200px) {
+      .nav-main { padding: 0 32px; }
+      .hero-left { padding: 56px 40px 56px 56px; }
+      .categories-section,
+      .products-section,
+      .features-bar,
+      .surmasure-section,
+      .contact-section,
+      footer { padding-left: 40px; padding-right: 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; gap: 32px; }
+      .surmasure-inner { gap: 48px; }
+      .contact-inner { gap: 48px; }
+    }
+
+    @media (max-width: 900px) {
+      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .nav-links-left { display: none; }
+      .artisanat-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .announcement-bar { font-size: 9.5px; letter-spacing: 1px; }
+
+      .nav-main {
+        padding: 0 20px;
+        grid-template-columns: auto 1fr auto;
+        height: 60px;
+      }
+
+      .nav-links-left,
+      .nav-links-right { display: none; }
+
+      .hamburger { display: flex; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: unset;
+      }
+
+      .hero-left {
+        padding: 52px 24px 48px;
+        order: 2;
+      }
+
+      .hero-right {
+        min-height: 320px;
+        order: 1;
+      }
+
+
+      .categories-section { padding: 40px 24px; }
+      .categories-grid { grid-template-columns: repeat(2, 1fr); gap: 0; }
+      .category-item { padding: 20px 12px; }
+
+      .products-section { padding: 56px 24px 64px; }
+      .products-grid { gap: 16px; }
+
+      .features-bar {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 48px 24px;
+        gap: 32px;
+      }
+
+      .surmasure-section { padding: 64px 24px; }
+      .surmasure-inner { grid-template-columns: 1fr; gap: 48px; }
+      .contact-section { padding: 64px 24px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .artisanat-grid { grid-template-columns: 1fr; }
+
+      footer { padding: 48px 24px 28px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+    }
+
+    @media (max-width: 480px) {
+      .products-grid { grid-template-columns: 1fr; gap: 24px; }
+      .features-bar { grid-template-columns: 1fr; }
+      .hero-title { font-size: 38px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════
+       TOP ANNOUNCEMENT BAR
+  ═══════════════════════════════════ -->
+  <div class="announcement-bar">
+    Artisanat authentique &nbsp;◆&nbsp; Créations façonnées à la main &nbsp;◆&nbsp; Sur mesure
+  </div>
+
+
+  <!-- ═══════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════ -->
+  <div class="nav-wrapper">
+    <nav class="nav-main">
+
+      <!-- Left links -->
+      <ul class="nav-links-left">
+        <li><a href="#bijoux" class="nav-link">Bijoux</a></li>
+        <li><a href="#maison" class="nav-link">Maison</a></li>
+        <li><a href="#collection" class="nav-link">Collection</a></li>
+      </ul>
+
+      <!-- Centered Logo -->
+      <div class="nav-logo">
+        <a href="#">
+          <img src="images/logo-web.png" alt="OKRINO">
+        </a>
+      </div>
+
+      <!-- Right links + actions -->
+      <div style="display:flex;align-items:center;justify-content:flex-end;gap:0;">
+        <ul class="nav-links-right">
+          <li><a href="#cuisine" class="nav-link">Cuisine</a></li>
+          <li><a href="#artisanat" class="nav-link">Artisanat</a></li>
+          <li><a href="#sur-mesure" class="nav-link">Sur mesure</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Hamburger (mobile) -->
+        <button class="hamburger" aria-label="Menu" style="margin-left:16px;">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+
+    </nav>
+  </div>
+
+
+  <!-- ═══════════════════════════════════
+       HERO
+  ═══════════════════════════════════ -->
+  <section class="hero">
+
+    <!-- Left: text content -->
+    <div class="hero-left">
+<h1 class="hero-title">
+        L'art de vivre,<br>
+        <em>fait main.</em>
+      </h1>
+
+      <p class="hero-desc">
+        Découvrez notre sélection de pièces artisanales tunisiennes — bois, poterie, cuivre et céramique — façonnées à la main par des maîtres artisans passionnés.
+      </p>
+
+      <a href="#sur-mesure" class="btn-outline">Sur mesure</a>
+
+    </div>
+
+    <!-- Right: 3 vertical strips -->
+    <div class="hero-right">
+      <div class="hero-strips">
+        <div class="hero-strip">
+          <img src="images/hero/artisanat-bois.png" alt="Artisan bois d'olivier">
+        </div>
+        <div class="hero-strip">
+          <img src="images/hero/cuir.png" alt="Artisan cuir">
+        </div>
+        <div class="hero-strip">
+          <img src="images/hero/cuivre.png" alt="Artisan cuivre">
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       CATEGORIES
+  ═══════════════════════════════════ -->
+  <section class="categories-section">
+    <div class="categories-grid">
+
+      <!-- Bijoux → collier pendentif -->
+      <a href="#bijoux" class="category-item">
+        <div class="category-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 16 Q24 30 41 16"/>
+            <line x1="24" y1="30" x2="24" y2="34"/>
+            <path d="M24 34 L30 40 L24 46 L18 40 Z"/>
+            <line x1="18" y1="40" x2="30" y2="40"/>
+          </svg>
+        </div>
+        <span class="category-name">Bijoux</span>
+        <span class="category-cta">Voir la collection</span>
+      </a>
+
+      <!-- Maison → arche tunisienne -->
+      <a href="#maison" class="category-item">
+        <div class="category-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 44 L9 22 Q9 6 24 6 Q39 6 39 22 L39 44"/>
+            <path d="M15 44 L15 24 Q15 13 24 13 Q33 13 33 24 L33 44"/>
+            <line x1="5" y1="44" x2="43" y2="44"/>
+          </svg>
+        </div>
+        <span class="category-name">Maison</span>
+        <span class="category-cta">Voir la collection</span>
+      </a>
+
+      <!-- Arts de la Table → tajine -->
+      <a href="#cuisine" class="category-item">
+        <div class="category-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 27 Q9 44 24 44 Q39 44 39 27"/>
+            <line x1="9" y1="27" x2="39" y2="27"/>
+            <line x1="15" y1="27" x2="24" y2="9"/>
+            <line x1="33" y1="27" x2="24" y2="9"/>
+            <circle cx="24" cy="9" r="3"/>
+          </svg>
+        </div>
+        <span class="category-name">Arts de la Table</span>
+        <span class="category-cta">Voir la collection</span>
+      </a>
+
+      <!-- Artisanat → métier à tisser -->
+      <a href="#artisanat" class="category-item">
+        <div class="category-icon">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="10" width="32" height="30" rx="2"/>
+            <line x1="16" y1="10" x2="16" y2="40"/>
+            <line x1="24" y1="10" x2="24" y2="40"/>
+            <line x1="32" y1="10" x2="32" y2="40"/>
+            <path d="M4 25 Q24 20 44 25 Q24 30 4 25 Z"/>
+          </svg>
+        </div>
+        <span class="category-name">Artisanat</span>
+        <span class="category-cta">Découvrir</span>
+      </a>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       FEATURED PRODUCTS
+  ═══════════════════════════════════ -->
+  <section id="collection" class="products-section">
+
+    <div class="section-header">
+      <p class="section-label">Sélection artisanale</p>
+      <h2 class="section-title"><em>Sélection</em> Artisanale</h2>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- Product 1 -->
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img
+            src="images/collection/assiette-bois-olivier.png"
+            alt="Assiette en bois d'olivier"
+            loading="lazy"
+          >
+          <span class="product-badge">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Assiette en bois d'olivier</p>
+          <p class="product-material">Artisanat tunisien</p>
+          <p class="product-price">89.00 €</p>
+        </div>
+      </a>
+
+      <!-- Product 2 -->
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img
+            src="images/collection/boite-epices-bois-olivier.png"
+            alt="Boîte à épices en bois d'olivier"
+            loading="lazy"
+          >
+          <span class="product-badge">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Boîte à épices en bois d'olivier</p>
+          <p class="product-material">Artisanat tunisien</p>
+          <p class="product-price">64.00 €</p>
+        </div>
+      </a>
+
+      <!-- Product 3 -->
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img
+            src="images/collection/9410_lifestyle_20260607_152436_02.png"
+            alt="Peigne en bois d'olivier"
+            loading="lazy"
+          >
+          <span class="product-badge badge-copper">Populaire</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Peigne en bois d'olivier</p>
+          <p class="product-material">Sculpture artisanale</p>
+          <p class="product-price">38.00 €</p>
+        </div>
+      </a>
+
+      <!-- Product 4 -->
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&q=80&auto=format&fit=crop"
+            alt="Vase en céramique peinte"
+            loading="lazy"
+          >
+        </div>
+        <div class="product-info">
+          <p class="product-name">Vase en céramique peinte</p>
+          <p class="product-material">Céramique artisanale</p>
+          <p class="product-price">56.00 €</p>
+        </div>
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       BIJOUX
+  ═══════════════════════════════════ -->
+  <section id="bijoux" class="products-section alt-bg">
+    <div class="section-header">
+      <p class="section-label">Parures artisanales</p>
+      <h2 class="section-title"><em>Bijoux</em> Fait Main</h2>
+    </div>
+    <div class="products-grid">
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/bijoux/collier-cuivre.png" alt="Collier en cuivre" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Collier en cuivre</p>
+          <p class="product-material">Bijouterie berbère</p>
+          <p class="product-price">145.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/bijoux/boucles-cuivre.png" alt="Boucles d'oreilles cuivre" loading="lazy">
+          <span class="product-badge">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Boucles d'oreilles</p>
+          <p class="product-material">Cuivre martelé</p>
+          <p class="product-price">98.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/bijoux/bracelet-cuivre.png" alt="Bracelet cuivre" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Bracelet en cuivre</p>
+          <p class="product-material">Dinanterie artisanale</p>
+          <p class="product-price">76.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/bijoux/bague-cuivre.png" alt="Bague cuivre" loading="lazy">
+          <span class="product-badge badge-copper">Populaire</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Bague en cuivre</p>
+          <p class="product-material">Ciselure manuelle</p>
+          <p class="product-price">112.00 €</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       MAISON
+  ═══════════════════════════════════ -->
+  <section id="maison" class="products-section">
+    <div class="section-header">
+      <p class="section-label">Art de vivre</p>
+      <h2 class="section-title">Décoration <em>Maison</em></h2>
+    </div>
+    <div class="products-grid">
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/maison/plateau-bois.png" alt="Plateau bois d'olivier" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Plateau en bois d'olivier</p>
+          <p class="product-material">Sculpture manuelle</p>
+          <p class="product-price">94.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/maison/bougeoir-cuivre.png" alt="Bougeoir cuivre" loading="lazy">
+          <span class="product-badge">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Bougeoir en cuivre</p>
+          <p class="product-material">Dinanterie martelée</p>
+          <p class="product-price">68.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/maison/vase-ceramique.png" alt="Vase céramique" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Vase en céramique</p>
+          <p class="product-material">Poterie tournée</p>
+          <p class="product-price">82.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/maison/plateau-resine.png" alt="Plateau résine naturelle" loading="lazy">
+          <span class="product-badge badge-copper">Exclusif</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Plateau en résine naturelle</p>
+          <p class="product-material">Résine &amp; fleurs séchées</p>
+          <p class="product-price">118.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/maison/dessous-plat-cuir.png" alt="Dessous de plat cuir" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Dessous de plat en cuir</p>
+          <p class="product-material">Cuir végétal tanné</p>
+          <p class="product-price">48.00 €</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       CUISINE
+  ═══════════════════════════════════ -->
+  <section id="cuisine" class="products-section alt-bg">
+    <div class="section-header">
+      <p class="section-label">Table & Cuisine</p>
+      <h2 class="section-title">Arts de la <em>Table</em></h2>
+    </div>
+    <div class="products-grid">
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/cuisine/bol-sejnane.png" alt="Bol poterie Sejnane" loading="lazy">
+          <span class="product-badge">Nouveau</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Bol en poterie Sejnane</p>
+          <p class="product-material">Poterie naturelle peinte</p>
+          <p class="product-price">58.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/cuisine/assiettes-sejnane.png" alt="Assiettes Sejnane" loading="lazy">
+          <span class="product-badge badge-copper">Populaire</span>
+        </div>
+        <div class="product-info">
+          <p class="product-name">Assiettes Sejnane</p>
+          <p class="product-material">Motifs berbères peints main</p>
+          <p class="product-price">86.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/cuisine/saladier-bois.png" alt="Saladier bois d'olivier" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Saladier en bois d'olivier</p>
+          <p class="product-material">Tournage artisanal</p>
+          <p class="product-price">89.00 €</p>
+        </div>
+      </a>
+      <a href="#" class="product-card">
+        <div class="product-img-wrap">
+          <img src="images/cuisine/ustensiles-bois.png" alt="Ustensiles bois d'olivier" loading="lazy">
+        </div>
+        <div class="product-info">
+          <p class="product-name">Ustensiles en bois d'olivier</p>
+          <p class="product-material">Sculpture sur olivier</p>
+          <p class="product-price">52.00 €</p>
+        </div>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       ARTISANAT
+  ═══════════════════════════════════ -->
+  <section id="artisanat" class="products-section">
+    <div class="section-header">
+      <p class="section-label">Savoir-faire</p>
+      <h2 class="section-title">Notre <em>Artisanat</em></h2>
+    </div>
+    <div class="artisanat-grid">
+      <div class="artisanat-card">
+        <div class="artisanat-card-img">
+          <img src="images/artisanat/menuiserie.png" alt="Artisan bois d'olivier" loading="lazy">
+        </div>
+        <p class="artisanat-card-tag">Menuiserie</p>
+        <h3 class="artisanat-card-title">L'art du <em>Bois</em></h3>
+        <p class="artisanat-card-text">Chaque pièce est sculptée à la main dans du bois d'olivier, de noyer ou de jujubier — des essences choisies pour leur beauté naturelle et leur durabilité.</p>
+      </div>
+      <div class="artisanat-card">
+        <div class="artisanat-card-img">
+          <img src="images/artisanat/poterie-sejnane.png" alt="Artisane poterie Sejnane" loading="lazy">
+        </div>
+        <p class="artisanat-card-tag">Poterie Sejnane</p>
+        <h3 class="artisanat-card-title">La <em>Terre</em> de Sejnane</h3>
+        <p class="artisanat-card-text">Les artisanes de Sejnane perpétuent un savoir-faire berbère millénaire — chaque pièce est façonnée à la main, sans tour, et peinte de motifs géométriques traditionnels.</p>
+      </div>
+      <div class="artisanat-card">
+        <div class="artisanat-card-img">
+          <img src="images/artisanat/dinanterie.png" alt="Artisan cuivre dinanterie" loading="lazy">
+        </div>
+        <p class="artisanat-card-tag">Dinanterie</p>
+        <h3 class="artisanat-card-title">Le <em>Cuivre</em> martelé</h3>
+        <p class="artisanat-card-text">La dinanterie tunisienne — l'art du cuivre et du laiton — est l'une de nos spécialités. Chaque pièce est martelée à la main, gravée et polie avec soin par nos artisans.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       SUR MESURE
+  ═══════════════════════════════════ -->
+  <section id="sur-mesure" class="surmasure-section">
+    <div class="surmasure-inner">
+
+      <!-- Texte explicatif -->
+      <div class="surmasure-text">
+        <p class="section-label">Commande personnalisée</p>
+        <h2 class="section-title">Sur <em>Mesure</em></h2>
+        <p class="surmasure-desc">
+          Chez OKRINO, chaque pièce peut être imaginée et créée selon vos désirs. Que ce soit pour offrir un cadeau unique, décorer un intérieur ou marquer un moment particulier — nos artisans réalisent votre vision avec patience et excellence.
+        </p>
+        <p class="surmasure-desc" style="margin-bottom: 32px;">
+          Nous travaillons avec une sélection de matières nobles, choisies pour leur caractère et leur durabilité :
+        </p>
+        <div class="materials-list">
+          <span class="material-tag">Bois d'olivier</span>
+          <span class="material-tag">Cuivre &amp; Laiton</span>
+          <span class="material-tag">Poterie</span>
+          <span class="material-tag">Résine naturelle</span>
+          <span class="material-tag">Cuir</span>
+        </div>
+      </div>
+
+      <!-- Formulaire Sur mesure -->
+      <form id="form-surmasure" class="surmasure-form">
+        <input type="hidden" name="_subject" value="Nouvelle demande sur mesure — OKRINO">
+        <div class="form-group">
+          <label class="form-label">Décrivez votre projet *</label>
+          <textarea class="form-textarea" name="projet" placeholder="Ex : Je souhaite un plateau en bois d'olivier gravé avec un prénom, dimensions 40×30 cm…" required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Nom complet *</label>
+          <input class="form-input" type="text" name="nom" placeholder="Votre prénom et nom" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Adresse email *</label>
+          <input class="form-input" type="email" name="email" placeholder="votre@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Numéro de téléphone</label>
+          <input class="form-input" type="tel" name="telephone" placeholder="+33 6 00 00 00 00">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Adresse de livraison</label>
+          <input class="form-input" type="text" name="adresse" placeholder="Rue, ville, pays">
+        </div>
+        <button class="form-submit" type="submit">Envoyer ma demande</button>
+        <p class="form-success" id="success-surmasure" style="display:none;">Merci ! Votre demande a bien été envoyée. Nous vous répondons sous 48h.</p>
+        <p class="form-error" id="error-surmasure" style="display:none;">Une erreur s'est produite. Veuillez réessayer.</p>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       CONTACT
+  ═══════════════════════════════════ -->
+  <section id="contact" class="contact-section">
+    <div class="contact-inner">
+
+      <div class="contact-text">
+        <p class="section-label">Nous écrire</p>
+        <h2 class="section-title">Prenons <em>Contact</em></h2>
+        <p class="contact-desc">
+          Notre équipe est disponible pour répondre à toutes vos questions — que ce soit pour un conseil sur un produit, un suivi de commande, ou pour démarrer un projet sur mesure. Nous vous répondons sous 24h.
+        </p>
+      </div>
+
+      <!-- Mini formulaire contact -->
+      <form id="form-contact" style="display:flex;flex-direction:column;gap:18px;">
+        <input type="hidden" name="_subject" value="Nouveau message — OKRINO Contact">
+        <div class="form-group">
+          <label class="form-label" style="color:var(--medium);">Nom complet</label>
+          <input name="nom" style="background:var(--cream);border:1px solid var(--border);color:var(--dark);padding:13px 16px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;outline:none;transition:border-color .2s;width:100%;" type="text" placeholder="Votre nom">
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="color:var(--medium);">Email *</label>
+          <input name="email" style="background:var(--cream);border:1px solid var(--border);color:var(--dark);padding:13px 16px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;outline:none;transition:border-color .2s;width:100%;" type="email" placeholder="votre@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" style="color:var(--medium);">Message *</label>
+          <textarea name="message" style="background:var(--cream);border:1px solid var(--border);color:var(--dark);padding:13px 16px;font-family:'Jost',sans-serif;font-size:13px;font-weight:300;outline:none;transition:border-color .2s;width:100%;resize:vertical;min-height:120px;" placeholder="Votre message…" required></textarea>
+        </div>
+        <button id="btn-contact" style="background:var(--dark);color:var(--cream);border:none;padding:14px 36px;font-family:'Jost',sans-serif;font-size:9.5px;letter-spacing:3px;text-transform:uppercase;font-weight:600;cursor:pointer;align-self:flex-start;transition:background .2s;" type="submit">Envoyer</button>
+        <p id="success-contact" style="display:none;font-size:13px;color:#5C8A5A;font-weight:400;">Merci ! Votre message a bien été envoyé.</p>
+        <p id="error-contact" style="display:none;font-size:13px;color:#A05050;font-weight:400;">Une erreur s'est produite. Veuillez réessayer.</p>
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════
+       FEATURES BAR
+  ═══════════════════════════════════ -->
+  <div class="features-bar">
+
+    <div class="feature-item">
+      <div class="feature-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </div>
+      <p class="feature-title">Artisans Directs</p>
+      <p class="feature-desc">Sourcé directement auprès<br>des maîtres artisans</p>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <p class="feature-title">Fait Main</p>
+      <p class="feature-desc">Chaque pièce est unique,<br>créée avec soin et passion</p>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-icon-wrap">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+      <p class="feature-title">Livraison Internationale</p>
+      <p class="feature-desc">Livraison soignée<br>partout dans le monde</p>
+    </div>
+
+    <div class="feature-item">
+      <div class="feature-icon-wrap">
+        <svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+      </div>
+      <p class="feature-title">Sur Mesure</p>
+      <p class="feature-desc">Pièces personnalisées<br>selon vos envies</p>
+    </div>
+
+  </div>
+
+
+  <!-- ═══════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════ -->
+  <footer>
+    <div class="footer-grid">
+
+      <!-- Brand -->
+      <div class="footer-brand">
+        <img class="footer-logo-img" src="images/logo-web.png" alt="OKRINO">
+        <p class="footer-brand-text">
+          Maison de l'artisanat authentique, dédiée à la valorisation du savoir-faire tunisien à travers le monde.
+        </p>
+      </div>
+
+      <!-- Collections -->
+      <div>
+        <p class="footer-col-title">Collections</p>
+        <ul class="footer-link-list">
+          <li><a href="#collection">Toute la collection</a></li>
+          <li><a href="#bijoux">Bijoux</a></li>
+          <li><a href="#maison">Maison</a></li>
+          <li><a href="#cuisine">Cuisine</a></li>
+          <li><a href="#artisanat">Artisanat</a></li>
+        </ul>
+      </div>
+
+      <!-- Sur mesure -->
+      <div>
+        <p class="footer-col-title">Sur mesure</p>
+        <ul class="footer-link-list">
+          <li><a href="#sur-mesure">Pièces personnalisées</a></li>
+          <li><a href="#sur-mesure">Bois</a></li>
+          <li><a href="#sur-mesure">Cuivre</a></li>
+          <li><a href="#sur-mesure">Poterie</a></li>
+          <li><a href="#sur-mesure">Résine &amp; Cuir</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <p class="footer-col-title">Contact</p>
+        <ul class="footer-link-list">
+          <li><a href="#contact">Nous écrire</a></li>
+          <li><a href="#artisanat">Nos artisans</a></li>
+          <li><a href="#contact">À propos d'OKRINO</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="footer-bottom">
+      <span>© 2026 OKRINO — Tous droits réservés</span>
+      <span style="font-style:italic;font-family:'Cormorant Garamond',serif;font-size:13px;color:var(--medium);">Créé avec intention.</span>
+    </div>
+
+  </footer>
+
+<style>
+  .form-success {
+    font-size: 12px; color: #8AB08A; font-weight: 400;
+    letter-spacing: .5px; padding-top: 4px;
+  }
+  .form-error {
+    font-size: 12px; color: #C08080; font-weight: 400;
+    letter-spacing: .5px; padding-top: 4px;
+  }
+  .form-submit:disabled { opacity: .6; cursor: not-allowed; }
+</style>
+
+<script>
+  const ENDPOINT = 'https://formspree.io/f/xqeopkpa';
+
+  async function submitForm(formEl, btnEl, successEl, errorEl) {
+    btnEl.disabled = true;
+    const originalText = btnEl.textContent;
+    btnEl.textContent = 'Envoi…';
+    successEl.style.display = 'none';
+    errorEl.style.display = 'none';
+
+    try {
+      const res = await fetch(ENDPOINT, {
+        method: 'POST',
+        body: new FormData(formEl),
+        headers: { Accept: 'application/json' }
+      });
+
+      if (res.ok) {
+        formEl.reset();
+        successEl.style.display = 'block';
+      } else {
+        errorEl.style.display = 'block';
+      }
+    } catch {
+      errorEl.style.display = 'block';
+    } finally {
+      btnEl.disabled = false;
+      btnEl.textContent = originalText;
+    }
+  }
+
+  // Sur mesure form
+  document.getElementById('form-surmasure').addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitForm(
+      this,
+      this.querySelector('[type="submit"]'),
+      document.getElementById('success-surmasure'),
+      document.getElementById('error-surmasure')
+    );
+  });
+
+  // Contact form
+  document.getElementById('form-contact').addEventListener('submit', function(e) {
+    e.preventDefault();
+    submitForm(
+      this,
+      document.getElementById('btn-contact'),
+      document.getElementById('success-contact'),
+      document.getElementById('error-contact')
+    );
+  });
+</script>
+
+</body>
+</html>

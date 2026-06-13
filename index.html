@@ -6,13 +6,17 @@
 
   <!-- ── SEO primaire ── -->
   <title>OKRINO — L'art de vivre, fait main</title>
-  <meta name="description" content="Découvrez OKRINO, maison de l'artisanat tunisien authentique. Bijoux, objets en bois d'olivier, cuivre martelé, poterie Sejnane — pièces uniques façonnées à la main. Commandes sur mesure disponibles.">
-  <meta name="keywords" content="artisanat tunisien, bijoux fait main, bois olivier, cuivre martelé, poterie Sejnane, dinanterie, artisanat berbère, sur mesure, cadeau artisanal, OKRINO">
+  <meta name="description" content="OKRINO — Artisanat tunisien de luxe livré en France. Bijoux, bois d'olivier, cuivre martelé, cuir & poterie Sejnane : pièces uniques façonnées à la main, créations sur mesure disponibles.">
+  <meta name="keywords" content="artisanat tunisien France, bijoux fait main France, bois d'olivier, cuivre martelé, poterie Sejnane, cuir artisanal, cadeau artisanal France, sur mesure artisanat, artisanat berbère, livraison France, OKRINO">
   <meta name="author" content="OKRINO">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1C1008">
   <link rel="canonical" href="https://www.okrino.com/">
+  <link rel="alternate" hreflang="fr-FR" href="https://www.okrino.com/">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <meta name="geo.region" content="FR">
+  <meta name="geo.placename" content="France">
+  <meta name="DC.language" content="fr-FR">
 
   <!-- ── Open Graph (Facebook, LinkedIn, WhatsApp…) ── -->
   <meta property="og:type" content="website">
@@ -20,7 +24,7 @@
   <meta property="og:site_name" content="OKRINO">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:title" content="OKRINO — Artisanat Tunisien Fait Main">
-  <meta property="og:description" content="Bijoux, bois d'olivier, cuivre martelé, poterie Sejnane — pièces artisanales tunisiennes uniques, façonnées à la main. Commandes sur mesure.">
+  <meta property="og:description" content="Bijoux, bois d'olivier, cuivre martelé, cuir & poterie Sejnane — artisanat tunisien de luxe, façonné à la main. Pièces uniques et créations sur mesure disponibles, livrées dans le monde entier.">
   <meta property="og:image" content="https://www.okrino.com/images/hero/cuivre.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -29,7 +33,7 @@
   <!-- ── Twitter Card ── -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OKRINO — Artisanat Tunisien Fait Main">
-  <meta name="twitter:description" content="Bijoux, bois d'olivier, cuivre martelé, poterie Sejnane — pièces uniques façonnées à la main. Sur mesure disponible.">
+  <meta name="twitter:description" content="Bijoux, bois d'olivier, cuivre martelé, cuir & poterie Sejnane — artisanat tunisien de luxe, fait main. Pièces uniques et créations sur mesure disponibles.">
   <meta name="twitter:image" content="https://www.okrino.com/images/hero/cuivre.png">
 
   <!-- ── Données structurées JSON-LD ── -->
@@ -43,13 +47,18 @@
         "name": "OKRINO",
         "url": "https://www.okrino.com/",
         "logo": "https://www.okrino.com/images/logo-web.png",
-        "description": "Maison de l'artisanat tunisien authentique, dédiée à la valorisation du savoir-faire berbère à travers le monde.",
+        "description": "Maison de l'artisanat tunisien de luxe, spécialisée dans les bijoux, le bois d'olivier, le cuivre martelé, le cuir et la poterie Sejnane. Pièces uniques façonnées à la main et créations entièrement sur mesure.",
         "foundingLocation": "Tunisie",
-        "areaServed": "Worldwide",
+        "areaServed": [
+          { "@type": "Country", "name": "France" },
+          { "@type": "Country", "name": "Belgium" },
+          { "@type": "Country", "name": "Switzerland" }
+        ],
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "customer service",
-          "availableLanguage": ["fr", "ar"]
+          "availableLanguage": ["fr"],
+          "areaServed": { "@type": "Country", "name": "France" }
         }
       },
       {
@@ -65,7 +74,7 @@
         "@id": "https://www.okrino.com/#webpage",
         "url": "https://www.okrino.com/",
         "name": "OKRINO — Artisanat Tunisien Fait Main",
-        "description": "Découvrez notre sélection de pièces artisanales tunisiennes — bois, poterie, cuivre et céramique — façonnées à la main par des maîtres artisans.",
+        "description": "Découvrez OKRINO — maison de l'artisanat tunisien de luxe. Bijoux, bois d'olivier sculpté, cuivre martelé, cuir et poterie Sejnane : des pièces uniques façonnées à la main et des créations entièrement sur mesure, livrées partout dans le monde.",
         "isPartOf": { "@id": "https://www.okrino.com/#website" },
         "publisher": { "@id": "https://www.okrino.com/#organization" },
         "inLanguage": "fr-FR",
@@ -85,7 +94,7 @@
               "name": "Assiette en bois d'olivier",
               "description": "Assiette artisanale sculptée à la main en bois d'olivier tunisien.",
               "category": "Arts de la table",
-              "offers": { "@type": "Offer", "price": "89.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" }
+              "offers": { "@type": "Offer", "price": "89.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "eligibleRegion": { "@type": "Country", "name": "France" } }
             }
           },
           {
@@ -95,7 +104,7 @@
               "name": "Boîte à épices en bois d'olivier",
               "description": "Boîte à épices artisanale en bois d'olivier, sculptée à la main.",
               "category": "Cuisine",
-              "offers": { "@type": "Offer", "price": "64.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" }
+              "offers": { "@type": "Offer", "price": "64.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "eligibleRegion": { "@type": "Country", "name": "France" } }
             }
           },
           {
@@ -105,7 +114,7 @@
               "name": "Peigne en bois d'olivier",
               "description": "Peigne artisanal sculpté à la main en bois d'olivier.",
               "category": "Maison",
-              "offers": { "@type": "Offer", "price": "38.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" }
+              "offers": { "@type": "Offer", "price": "38.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "eligibleRegion": { "@type": "Country", "name": "France" } }
             }
           },
           {
@@ -115,7 +124,7 @@
               "name": "Casse-noix en bois d'olivier",
               "description": "Casse-noix artisanal tourné à la main en bois d'olivier tunisien.",
               "category": "Cuisine",
-              "offers": { "@type": "Offer", "price": "44.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock" }
+              "offers": { "@type": "Offer", "price": "44.00", "priceCurrency": "EUR", "availability": "https://schema.org/InStock", "eligibleRegion": { "@type": "Country", "name": "France" } }
             }
           }
         ]
@@ -984,7 +993,7 @@
        TOP ANNOUNCEMENT BAR
   ═══════════════════════════════════ -->
   <div class="announcement-bar">
-    Artisanat authentique &nbsp;◆&nbsp; Créations façonnées à la main &nbsp;◆&nbsp; Sur mesure
+    Livraison en France &nbsp;◆&nbsp; Bijoux · Bois d'olivier · Cuivre · Cuir · Poterie Sejnane &nbsp;◆&nbsp; Artisanat tunisien de luxe &nbsp;◆&nbsp; Sur mesure
   </div>
 
 
@@ -1073,7 +1082,7 @@
       </h1>
 
       <p class="hero-desc">
-        Bijoux, bois d'olivier, cuivre martelé, poterie Sejnane — des pièces uniques façonnées à la main par des maîtres artisans tunisiens, livrées partout dans le monde.
+        Bijoux, bois d'olivier sculpté, cuivre martelé, cuir et poterie Sejnane — des créations artisanales tunisiennes de luxe, façonnées à la main par des maîtres artisans. Pièces uniques et commandes entièrement sur mesure, livrées en France et dans le monde entier.
       </p>
 
       <a href="#sur-mesure" class="btn-outline">Commande sur mesure</a>
@@ -1567,8 +1576,8 @@
       <div class="feature-icon-wrap">
         <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       </div>
-      <p class="feature-title">Livraison Internationale</p>
-      <p class="feature-desc">Livraison soignée<br>partout dans le monde</p>
+      <p class="feature-title">Livraison en France</p>
+      <p class="feature-desc">Livraison soignée en France<br>et dans le monde entier</p>
     </div>
 
     <div class="feature-item">
